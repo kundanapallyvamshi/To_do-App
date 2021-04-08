@@ -17,6 +17,8 @@
 
         <form action="/tasks" method="POST">
             <p>Enter activity : <input type="text" name="text" placeholder="Meeting at 5:30" id="text" > <input class="btn-success" type="submit" value="Add" id="add"></p>
+            
+        </form>
             <div class="to_do" id="to_do">
                 <% if(tasks.length>0) { %>
                     <% tasks.forEach(task =>{ %>
@@ -27,8 +29,6 @@
                     <% } %> 
             </div>
             <a href="/users/logout" class="btn btn-secondary">Logout</a>
-
-        </form>
     </div>
     
     <script>
