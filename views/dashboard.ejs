@@ -20,7 +20,10 @@
             
         </form>
             <div class="to_do" id="to_do">
-                <% if(tasks.length>0) { %>
+                <% var filtered_tasks = tasks.filter(function (el) { %>
+                   <% return el != null; %>
+                  <% }) %> 
+                <% if(filtered_tasks.length>0) { %>
                     <% tasks.forEach(task =>{ %>
                         <p class="list-styling" id="list-styling"><%= task.text %>  <button class="btn btn-danger btn-sm hover btn-primary" data-toggle="tooltip" data-placement="bottom" title="Delete Task"><a class="delete" data-doc="<%= task._id %> ">Delete</a></button> </p>
                     <% }) %>
