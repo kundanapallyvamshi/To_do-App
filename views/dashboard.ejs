@@ -35,15 +35,24 @@
     </div>
     
     <script>
-
-        const del = document.querySelector('a.delete');
-        del.addEventListener('click',(event)=>{
-            //need to add delete logic at user end
-            const task_id = `/tasks/${del.dataset.doc}`;
-            fetch(task_id,{
-                method : 'DELETE'
-            }).then((response)=>response.json()).then((data)=>window.location.href = data.redirect).catch(err=>{console.log(err);});
+        // add eventlistener to all delete buttons
+        document.querySelectorAll('a.delete').forEach(delButton => {
+            delButton.addEventListener('click', (e) => {
+                console.log(delButton.dataset.doc);
+                const task_id = `/tasks/${delButton.dataset.doc}`;
+                fetch(task_id, {
+                    method: 'DELETE'
+                }).then((response) => response.json()).then((data) => window.location.href = data.redirect).catch(err => { console.log(err); });
+            });
         });
+        // const del = document.querySelector('a.delete');
+        // del.addEventListener('click',(event)=>{
+        //     //need to add delete logic at user end
+        //     const task_id = `/tasks/${del.dataset.doc}`;
+        //     fetch(task_id,{
+        //         method : 'DELETE'
+        //     }).then((response)=>response.json()).then((data)=>window.location.href = data.redirect).catch(err=>{console.log(err);});
+        // });
 
     </script>
 
