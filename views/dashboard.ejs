@@ -25,7 +25,7 @@
                   <% }) %> 
                 <% if(filtered_tasks.length>0) { %>
                     <% tasks.forEach(task =>{ %>
-                        <p class="list-styling" id="list-styling"><%= task.text %>  <button class="btn btn-danger btn-sm hover btn-primary" data-toggle="tooltip" data-placement="bottom" title="Delete Task"><a class="delete" data-doc="<%= task._id %> ">Delete</a></button> </p>
+                        <p class="list-styling" id="list-styling"><%= task.text %>  <button class="btn btn-danger btn-sm hover btn-primary delete" data-doc="<%= task._id %> "data-toggle="tooltip" data-placement="bottom" title="Delete Task">Delete</button></p>
                     <% }) %>
                     <% }else{ %>
                         <p>No Tasks Yet!!!</p>
@@ -35,16 +35,16 @@
     </div>
     
     <script>
-
-        const del = document.querySelector('a.delete');
-        del.addEventListener('click',(event)=>{
-            //need to add delete logic at user end
-            const task_id = `/tasks/${del.dataset.doc}`;
-            fetch(task_id,{
-                method : 'DELETE'
-            }).then((response)=>response.json()).then((data)=>window.location.href = data.redirect).catch(err=>{console.log(err);});
+        // add eventlistener to all delete buttons
+        document.querySelectorAll('button.delete').forEach(delButton => {
+            delButton.addEventListener('click', (e) => {
+                console.log(delButton.dataset.doc)
+                const task_id = `/tasks/${delButton.dataset.doc}`;
+                fetch(task_id, {
+                    method: 'DELETE'
+                }).then((response) => response.json()).then((data) => window.location.href = data.redirect).catch(err => { console.log(err); });
+            });
         });
-
     </script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
