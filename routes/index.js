@@ -9,7 +9,7 @@ router.get('/', forwardAuthenticated, (req, res) => res.render('welcome'));
 
 // Dashboard
 router.get('/dashboard', ensureAuthenticated, (req, res) =>{
-  User.find().then((result)=>{
+    Data.find().then((result)=>{
     res.render('dashboard',{title : 'All Tasks',tasks : result,user: req.user})
   }).catch((err)=>{
     console.log(err);
