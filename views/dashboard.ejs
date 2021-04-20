@@ -11,9 +11,18 @@
 
 </head>
 <body>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <div class="container">
+          <a class="navbar-brand"><p class="lead mb-3">Welcome <%= user.name %></p>
+          </a>
+
+          <a href="/users/logout" class="btn btn-secondary">Logout</a>
+
+        </div>
+      </nav>
+      
 
         <div class="box">
-            <p class="lead mb-3">Welcome <%= user.name %></p>
 
         <form action="/tasks" method="POST">
             <p>Enter activity : <input type="text" name="text" placeholder="Meeting at 5:30" id="text" > <input class="btn-success" type="submit" value="Add" id="add"></p>
@@ -31,7 +40,6 @@
                         <p>No Tasks Yet!!!</p>
                     <% } %> 
             </div>
-            <a href="/users/logout" class="btn btn-secondary">Logout</a>
     </div>
     
     <script>
