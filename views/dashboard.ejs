@@ -38,13 +38,13 @@
             <img class="card-img-top" src="holder.js/100x180/" alt="">
             <div class="card-body">
                 <h4 class="card-title" style="background-color: #f54251;" >Pending Tasks</h4>
-                <p class="card-text">
+                <p class="card-text1">
                     <% var filtered_tasks = tasks.filter(function (el) { %>
                         <% return el != null; %>
                        <% }) %> 
                      <% if(filtered_tasks.length>0) { %>
                          <% tasks.forEach(task =>{ %>
-                             <p class="list-styling" id="list-styling"><%= task.text %> <%= task.createdAt %>  <button class="btn btn-danger btn-sm hover btn-primary" data-toggle="tooltip" data-placement="bottom" title="Delete Task"><a class="delete" data-doc="<%= task._id %> ">Done</a></button> </p>
+                             <p class="list-styling" id="list-styling"><div class="p-3 mb-2 bg-danger text-white"><%= task.text %>&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-warning btn-sm" type="button" data-toggle="tooltip" data-placement="bottom" title="Delete Task"><a class="delete" data-doc="<%= task._id %> ">Done</a></button></div></p>
                          <% }) %>
                          <% }else{ %>
                              <p>No Tasks Yet!!!</p>
@@ -57,14 +57,14 @@
             <img class="card-img-top" src="holder.js/100x180/" alt="">
             <div class="card-body">
                 <h4 class="card-title" style="background-color: #42f55a;">Completed Tasks</h4>
-                <p class="card-text">
+                <p class="card-text2">
                     <% var filtered_tasks = tasks.filter(function (el) { %>
                         <% return el != null; %>
                        <% }) %> 
                      <% if(filtered_tasks.length>0) { %>
                          <% tasks.forEach(task =>{ %>
-                             <p class="list-styling" id="list-styling"><%= task.text %> <%= task.createdAt %>  <button class="btn btn-danger btn-sm hover btn-primary" data-toggle="tooltip" data-placement="bottom" title="Delete Task"><a class="delete" data-doc="<%= task._id %> ">Done</a></button> </p>
-                         <% }) %>
+                            <p class="list-styling" id="list-styling"><div class="p-3 mb-2 bg-success text-white"><%= task.text %>&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-danger btn-sm hover btn-primary" data-toggle="tooltip" data-placement="bottom" title="Delete Task"><a class="delete" data-doc="<%= task._id %> ">Done</a></button></div></p>
+                            <% }) %>
                          <% }else{ %>
                              <p>No Tasks Yet!!!</p>
                          <% } %> 
@@ -76,14 +76,14 @@
             <img class="card-img-top" src="holder.js/100x180/" alt="">
             <div class="card-body">
                 <h4 class="card-title" style="background-color: #4299f5;">Future Tasks</h4>
-                <p class="card-text">
+                <p class="card-text3">
                     <% var filtered_tasks = tasks.filter(function (el) { %>
                         <% return el != null; %>
                        <% }) %> 
                      <% if(filtered_tasks.length>0) { %>
                          <% tasks.forEach(task =>{ %>
-                             <p class="list-styling" id="list-styling"><%= task.text %> <%= task.createdAt %>  <button class="btn btn-danger btn-sm hover btn-primary" data-toggle="tooltip" data-placement="bottom" title="Delete Task"><a class="delete" data-doc="<%= task._id %> ">Done</a></button> </p>
-                         <% }) %>
+                            <p class="list-styling" id="list-styling"><div class="p-3 mb-2 bg-warning text-white"><%= task.text %>&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-danger btn-sm hover btn-primary" data-toggle="tooltip" data-placement="bottom" title="Delete Task"><a class="delete" data-doc="<%= task._id %> ">Done</a></button></div></p>
+                            <% }) %>
                          <% }else{ %>
                              <p>No Tasks Yet!!!</p>
                          <% } %> 
