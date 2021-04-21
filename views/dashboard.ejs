@@ -20,7 +20,7 @@
 
         </div>
       </nav>
-      
+
 
         <div class="box">
 
@@ -34,13 +34,51 @@
                   <% }) %> 
                 <% if(filtered_tasks.length>0) { %>
                     <% tasks.forEach(task =>{ %>
-                        <p class="list-styling" id="list-styling"><%= task.text %>  <button class="btn btn-danger btn-sm hover btn-primary" data-toggle="tooltip" data-placement="bottom" title="Delete Task"><a class="delete" data-doc="<%= task._id %> ">Delete</a></button> </p>
+                        <p class="list-styling" id="list-styling"><p class="ttext"><%= task.text %></p>  <button class="btn btn-danger btn-sm hover btn-primary" data-toggle="tooltip" data-placement="bottom" title="Delete Task"><a class="delete" data-doc="<%= task._id %> ">Done</a></button> </p>
                     <% }) %>
                     <% }else{ %>
                         <p>No Tasks Yet!!!</p>
                     <% } %> 
             </div>
     </div>
+    
+    <div class="card-columns">
+        <div class="card">
+            <img class="card-img-top" src="holder.js/100x180/" alt="">
+            <div class="card-body">
+                <h4 class="card-title" style="background-color: #f54251;" >Pending Tasks</h4>
+                <p class="card-text">
+                    <% var filtered_tasks = tasks.filter(function (el) { %>
+                        <% return el != null; %>
+                       <% }) %> 
+                     <% if(filtered_tasks.length>0) { %>
+                         <% tasks.forEach(task =>{ %>
+                             <p class="list-styling" id="list-styling"><%= task.text %> <%= task.createdAt %>  <button class="btn btn-danger btn-sm hover btn-primary" data-toggle="tooltip" data-placement="bottom" title="Delete Task"><a class="delete" data-doc="<%= task._id %> ">Done</a></button> </p>
+                         <% }) %>
+                         <% }else{ %>
+                             <p>No Tasks Yet!!!</p>
+                         <% } %> 
+     
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="holder.js/100x180/" alt="">
+            <div class="card-body">
+                <h4 class="card-title" style="background-color: #42f55a;">Completed Tasks</h4>
+                <p class="card-text">Text</p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="holder.js/100x180/" alt="">
+            <div class="card-body">
+                <h4 class="card-title" style="background-color: #4299f5;">Future Tasks</h4>
+                <p class="card-text">Text</p>
+            </div>
+        </div>
+
+    </div>
+
     
     <script>
         // add eventlistener to all delete buttons
