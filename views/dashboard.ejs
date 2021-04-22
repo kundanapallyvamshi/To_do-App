@@ -44,7 +44,9 @@
                        <% }) %> 
                      <% if(filtered_tasks.length>0) { %>
                          <% tasks.forEach(task =>{ %>
-                             <p class="list-styling" id="list-styling"><div class="p-3 mb-2 bg-danger text-white"><%= task.text %>&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-warning btn-sm" type="button" data-toggle="tooltip" data-placement="bottom" title="Delete Task"><a class="delete" data-doc="<%= task._id %> ">Done</a></button></div></p>
+                             <% if(task.__v==0){ %> 
+                                <p class="list-styling" id="list-styling"><div class="p-3 mb-2 bg-danger text-white"><%= task.text %>&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-warning btn-sm" type="button" data-toggle="tooltip" data-placement="bottom" title="Delete Task"><a class="delete" data-doc="<%= task._id %> ">Done</a></button></div></p> 
+                             <% } %>
                          <% }) %>
                          <% }else{ %>
                              <p>No Tasks Yet!!!</p>
@@ -63,7 +65,9 @@
                        <% }) %> 
                      <% if(filtered_tasks.length>0) { %>
                          <% tasks.forEach(task =>{ %>
-                            <p class="list-styling" id="list-styling"><div class="p-3 mb-2 bg-success text-white"><%= task.text %>&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-danger btn-sm hover btn-primary" data-toggle="tooltip" data-placement="bottom" title="Delete Task"><a class="delete" data-doc="<%= task._id %> ">Done</a></button></div></p>
+                            <% if(task.__v==1){ %> 
+                                <p class="list-styling" id="list-styling"><div class="p-3 mb-2 bg-danger text-white"><%= task.text %>&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-warning btn-sm" type="button" data-toggle="tooltip" data-placement="bottom" title="Delete Task"><a class="delete" data-doc="<%= task._id %> ">Done</a></button></div></p> 
+                             <% } %>
                             <% }) %>
                          <% }else{ %>
                              <p>No Tasks Yet!!!</p>
@@ -82,7 +86,9 @@
                        <% }) %> 
                      <% if(filtered_tasks.length>0) { %>
                          <% tasks.forEach(task =>{ %>
-                            <p class="list-styling" id="list-styling"><div class="p-3 mb-2 bg-warning text-white"><%= task.text %>&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-danger btn-sm hover btn-primary" data-toggle="tooltip" data-placement="bottom" title="Delete Task"><a class="delete" data-doc="<%= task._id %> ">Done</a></button></div></p>
+                            <% if(task.__v==0){ %> 
+                                <p class="list-styling" id="list-styling"><div class="p-3 mb-2 bg-danger text-white"><%= task.text %>&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-warning btn-sm" type="button" data-toggle="tooltip" data-placement="bottom" title="Delete Task"><a class="delete" data-doc="<%= task._id %> ">Done</a></button></div></p> 
+                             <% } %>
                             <% }) %>
                          <% }else{ %>
                              <p>No Tasks Yet!!!</p>
