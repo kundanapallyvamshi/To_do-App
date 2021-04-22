@@ -10,6 +10,6 @@ const dataSchema = new Schema({
     password : String
 },{timestamps : true});
 
-const Data = mongoose.model('node-js', dataSchema);
+const Data = mongoose.model('tasks', dataSchema);
 
 module.exports = Data;
