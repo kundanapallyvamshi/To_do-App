@@ -56,6 +56,7 @@ router.post('/tasks',(req,res)=>{
 
 router.delete('/tasks/:id',(req,res)=>{
     const id = req.params.id;
+    
     Data.findByIdAndRemove(id).then(result=>{
         //console.log(id);
         //res.redirect('/tasks');
