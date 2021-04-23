@@ -24,7 +24,7 @@
 
         <div class="box">
 
-        <form action="/tasks" method="POST">
+        <form action="/dashboard" method="POST">
             <p>Enter activity : <input type="text" name="text" placeholder="Meeting at 5:30" id="text" > <input class="btn-success" type="submit" value="Add" id="add"></p>
             
         </form>
@@ -105,7 +105,7 @@
         document.querySelectorAll('a.delete').forEach(delButton => {
             delButton.addEventListener('click', (e) => {
                 //console.log(delButton.dataset.doc);
-                const task_id = `/tasks/${delButton.dataset.doc}`;
+                const task_id = `/dashboard/${delButton.dataset.doc}`;
                 fetch(task_id, {
                     method: 'DELETE'
                 }).then((response) => response.json()).then((data) => window.location.href = data.redirect).catch(err => { console.log(err); });
