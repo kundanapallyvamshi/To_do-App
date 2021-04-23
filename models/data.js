@@ -6,6 +6,10 @@ const dataSchema = new Schema({
         type : String,
         required : true
     },
+    isDone : {
+        type : String,
+        required : true
+    },
     username : String,
     password : String
 },{timestamps : true});

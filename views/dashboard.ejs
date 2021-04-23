@@ -25,6 +25,7 @@
         <div class="box">
 
         <form action="/dashboard" method="POST">
+            <input type="hidden" id="isDone" name="isDone" value="0">
             <p>Enter activity : <input type="text" name="text" placeholder="Meeting at 5:30" id="text" > <input class="btn-success" type="submit" value="Add" id="add"></p>
             
         </form>
@@ -44,7 +45,7 @@
                        <% }) %> 
                      <% if(filtered_tasks.length>0) { %>
                          <% tasks.forEach(task =>{ %>
-                             <% if(task.__v==0){ %> 
+                             <% if(task.isDone=="0"){ %> 
                                 <p class="list-styling" id="list-styling"><div class="p-3 mb-2 bg-danger text-white"><%= task.text %>&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-warning btn-sm" type="button" data-toggle="tooltip" data-placement="bottom" title="Delete Task"><a class="delete" data-doc="<%= task._id %> ">Done</a></button></div></p> 
                              <% } %>
                          <% }) %>
@@ -65,7 +66,7 @@
                        <% }) %> 
                      <% if(filtered_tasks.length>0) { %>
                          <% tasks.forEach(task =>{ %>
-                            <% if(task.__v==1){ %> 
+                            <% if(task.isDone=="1"){ %> 
                                 <p class="list-styling" id="list-styling"><div class="p-3 mb-2 bg-danger text-white"><%= task.text %>&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-warning btn-sm" type="button" data-toggle="tooltip" data-placement="bottom" title="Delete Task"><a class="delete" data-doc="<%= task._id %> ">Done</a></button></div></p> 
                              <% } %>
                             <% }) %>
@@ -86,7 +87,7 @@
                        <% }) %> 
                      <% if(filtered_tasks.length>0) { %>
                          <% tasks.forEach(task =>{ %>
-                            <% if(task.__v==0){ %> 
+                            <% if(task.isDone=="0"){ %> 
                                 <p class="list-styling" id="list-styling"><div class="p-3 mb-2 bg-danger text-white"><%= task.text %>&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-warning btn-sm" type="button" data-toggle="tooltip" data-placement="bottom" title="Delete Task"><a class="delete" data-doc="<%= task._id %> ">Done</a></button></div></p> 
                              <% } %>
                             <% }) %>
