@@ -1,28 +1,28 @@
 #info{
-    border: 1px solid black;
+  border: 1px solid black;
 }
 .to_do{
-    margin-top: 25px;
+  margin-top: 25px;
 }
 .list-styling{
-    margin: 10px;
-    cursor: pointer;
-    padding: auto;
+  margin: 10px;
+  cursor: pointer;
+  padding: auto;
 }
 .box{
-    border: 2px solid greenyellow;
-    height: fit-content;
-    width: fit-content;
-    margin: auto;
-    box-shadow: 2px greenyellow;
-    padding: 15px;
+  border: 2px solid greenyellow;
+  height: fit-content;
+  width: fit-content;
+  margin: auto;
+  box-shadow: 2px greenyellow;
+  padding: 15px;
 }
 .delete{
-    padding-right: 0%;
-    top: 0;
-    right: 0;
-    padding: 8px;
+  padding-right: 0%;
+  top: 0;
+  right: 0;
+  padding: 8px;
 }
 .delete:hover{
-    cursor: pointer;
+  cursor: pointer;
 }
