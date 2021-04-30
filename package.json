@@ -1,11 +1,11 @@
 {
-  "name": "node_passport_login",
-  "version": "2.0.0",
-  "description": "Node.js authentication with Passport",
+  "name": "todo_app",
+  "version": "0.1.0",
+  "description": "todo app using express, mongodb and passportjs",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node .",
+    "dev": "nodemon ."
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^2.4.1",
     "ejs": "^2.7.4",
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
