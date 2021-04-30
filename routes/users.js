@@ -4,15 +4,14 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 // Load User model
 const User = require('../models/User');
-const Data = require('../models/data');
 
 const { forwardAuthenticated } = require('../config/auth');
 
 // Login Page
-router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));
+router.get('/login', forwardAuthenticated, (req, res) => res.render('login', { title: 'Login' }));
 
 // Register Page
-router.get('/register', forwardAuthenticated, (req, res) => res.render('register'));
+router.get('/register', forwardAuthenticated, (req, res) => res.render('register', { title: 'Register' }));
 
 // Register
 router.post('/register', (req, res) => {
@@ -33,6 +32,7 @@ router.post('/register', (req, res) => {
 
   if (errors.length > 0) {
     res.render('register', {
+      title: 'Register',
       errors,
       name,
       email,
@@ -44,6 +44,7 @@ router.post('/register', (req, res) => {
       if (user) {
         errors.push({ msg: 'Email already exists' });
         res.render('register', {
+          title: 'Register',
           errors,
           name,
           email,
