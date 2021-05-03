@@ -36,8 +36,10 @@ router.post('/dashboard', (req, res) => {
 router.delete('/dashboard/:id', (req, res) => {
   const id = req.params.id;
   // var newvalues = { $set: {isDone : "1"} };
-  Data.updateOne({isDone : true})
-    .then(() => res.json({ redirect: '/dashboard' }))
+  Data.findByIdAndRemove(id)
+    .then(() => res.json({redirect : '/dashboard'}))
+  // Data.updateOne({isDone : true})
+  //   .then(() => res.json({ redirect: '/dashboard' }))
     .catch(err => console.log(err));
 });
 
